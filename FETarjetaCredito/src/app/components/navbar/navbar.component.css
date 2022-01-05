@@ -1,0 +1,17 @@
+.principal{    
+    height: 100%;
+    background-color: aqua;
+}
+
+.secundario{
+    width: 70%;
+    height: 100%;
+}
+
+.nav-link{
+    color: black;
+}
+
+.fa-user-tie{
+    font-size: 100px;
+}

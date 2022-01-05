@@ -1,0 +1,59 @@
+<div class="container mt-5">
+  <div class="row align-items-center">
+    <div class="col col-lg-9 offset-lg-1">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="m-2 titulo">Ingrese los datos</h2>
+      
+          <form class="form-horizontal" novalidate [formGroup]="formGroup">
+            <fieldset>
+      
+              <div class="form-group row m-3"
+                [ngClass]="{'has-error': (formGroup.get('email')?.touched || formGroup.get('email')?.dirty) && !formGroup.get('email')?.valid }">
+                <label class="col-md-2 control-label subTitulo" for="emailId">Email</label>
+      
+                <div class="col-md-6">
+                  <input class="form-control" autocomplete="off" id="emailId" type="text" required formControlName="email" />
+                  <span class="help-block"
+                    *ngIf="(formGroup.get('email')?.touched || formGroup.get('email')?.dirty) && formGroup.get('email')?.errors">
+                    <span [class.red-icon]="formGroup.get('email')?.errors">
+                      El campo email es requerido
+                    </span>
+                  </span>
+                </div>
+              </div>
+      
+              <div class="form-group row m-3"
+                [ngClass]="{'has-error': (formGroup.get('password')?.touched || formGroup.get('password')?.dirty) && !formGroup.get('password')?.valid }">
+                <label class="col-md-2 control-label subTitulo" for="passwordId">Password</label>
+                <div class="col-md-6">
+                  <input class="form-control" autocomplete="off" id="passwordId" type="password" required formControlName="password" />
+                  <span class="help-block"
+                    *ngIf="(formGroup.get('password')?.touched || formGroup.get('password')?.dirty) && formGroup.get('password')?.errors">
+                    <span [class.red-icon]="formGroup.get('password')?.errors">
+                      El campo password es requerido
+                    </span>
+                  </span>
+                </div>
+              </div>
+      
+              <div class="form-group row m-2">
+                <div class="col-md-8 col-md-offset-5">
+                  <span>
+                    <button class="btn btn-info m-2 subTitulo" type="button" (click)="loguearse()" [disabled]="!formGroup.valid">
+                      Loguearse
+                    </button>
+                    <button class="btn btn-info m-2 subTitulo" type="button" (click)="registrarse()" [disabled]="!formGroup.valid">
+                      Registrarse
+                    </button>
+                  </span>
+                </div>
+              </div>
+      
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
+</div>

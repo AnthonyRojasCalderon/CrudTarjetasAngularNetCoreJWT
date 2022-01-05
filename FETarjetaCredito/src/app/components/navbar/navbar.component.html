@@ -1,0 +1,27 @@
+<div class="container principal d-flex flex-column justify-content-center" style="height: 100vh;">
+    <div class="container d-flex flex-column justify-content-around" style="height: 600px;">
+        <div class="d-flex flex-column justify-content-around align-items-center" style="height: 200px;">
+            <i class="fas fa-user-tie"></i>
+            <div>
+                <h4>{{usuario | uppercase}}</h4>
+            </div>
+        </div>
+        <div>
+            <ul class="nav flex-column justify-content-around" style="height: 200px;">   
+                <li *ngIf="!estaLogueado()" [routerLinkActive]='["link-active"]'>
+                    <a [routerLink]='["/register-login"]' class="nav-link btn btn-info btn-lg subTitulo" (click)='collapse()'>
+                      <span class='glyphicon glyphicon-th-list'></span> Register / Login
+                    </a>
+                </li>
+                <li *ngIf="estaLogueado()" [routerLinkActive]='["link-active"]'>
+                    <a (click)='logout()' class="nav-link btn btn-info btn-lg subTitulo">
+                      <span class='glyphicon glyphicon-th-list'></span> Logout
+                    </a>
+                </li>             
+                <li (click)='validaLogin()' class="nav-item">
+                    <a [routerLink]='["/tarjeta"]' class="nav-link btn btn-info btn-lg subTitulo" href="#">Tarjetas</a>
+                </li>                
+            </ul>
+        </div>
+    </div>
+</div>
